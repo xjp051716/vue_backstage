@@ -57,6 +57,7 @@
   padding-top: 120px;
   font-size: 32px;
   font-weight: bold;
+  text-align: center;
 }
 .eye {
   margin-right: 5px;
@@ -133,12 +134,11 @@ export default {
       this.$refs.loginFormRef.validate(valid => {
         if (!valid) return
         // const { data: res } = await this.axios.post('/login', this.loginForm)
-        // console.log(res)
-        this.axios.post('/login', this.loginForm).then(res => {
+        this.axios.post('/adminLogin', this.qs.stringify(this.loginForm)).then(res => {
           res = res.data
-          if (res.meta.status !== 200) return this.$message.error('登录失败')
+          if (res.code !== 200) return this.$message.error('登录失败')
           this.$message.success('登录成功')
-          window.sessionStorage.setItem('token', res.data.token)
+          window.sessionStorage.setItem('token', res.info.token)
           this.$router.push('/home')
         })
       })
