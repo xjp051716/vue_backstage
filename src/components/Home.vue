@@ -106,12 +106,16 @@ export default {
       menuList: [
         {
           id: 1,
-          authName: '分类管理',
+          authName: '权限管理',
           icon: 'iconfont icon-tijikongjian',
           children: [
             {
-              id: 'categories',
-              childName: '商品分类'
+              id: 'roles',
+              childName: '角色列表'
+            },
+            {
+              id: 'rights',
+              childName: '权限列表'
             }
           ]
         },
@@ -120,6 +124,10 @@ export default {
           authName: '商品管理',
           icon: 'iconfont icon-shangpin',
           children: [
+            {
+              id: 'categories',
+              childName: '商品分类'
+            },
             {
               id: 'products',
               childName: '商品列表'
@@ -155,7 +163,7 @@ export default {
           icon: 'iconfont icon-baobiao',
           children: [
             {
-              id: 5.1,
+              id: 'statistics',
               childName: '销量统计'
             }
           ]

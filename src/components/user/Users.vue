@@ -3,7 +3,7 @@
     <!-- 面包屑导航区域 -->
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item><a href="/">用户管理</a></el-breadcrumb-item>
+      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 卡片视图区域 -->
@@ -26,9 +26,9 @@
             </el-input>
           </el-col>
           <el-col :span="4">
-            <el-button type="primary" @click="addDialogVisible = true"
-              >添加用户</el-button
-            >
+            <el-button type="primary" @click="addDialogVisible = true">
+              添加用户
+            </el-button>
           </el-col>
         </el-row>
       </div>
@@ -334,7 +334,7 @@ export default {
           })
       })
     },
-    // 显示编辑用户的对话框
+    // 显示删除用户的对话框
     removeUserById(uid) {
       // 弹窗确认是否删除该用户
       this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
